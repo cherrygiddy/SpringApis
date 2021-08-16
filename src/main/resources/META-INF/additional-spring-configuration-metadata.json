@@ -1,0 +1,29 @@
+{
+  "properties": [
+    {
+      "name": "validationURL",
+      "type": "java.lang.String",
+      "description": "Description for validationURL."
+    },
+    {
+      "name": "responseType",
+      "type": "java.lang.String",
+      "description": "Description for responseType."
+    },
+    {
+      "name": "register-url-endpoint",
+      "type": "java.lang.String",
+      "description": "Description for register-url-endpoint."
+    },
+    {
+      "name": "simulate-transaction-endpoint",
+      "type": "java.lang.String",
+      "description": "Description for simulate-transaction-endpoint."
+    },
+    {
+      "name": "shortCode",
+      "type": "java.lang.String",
+      "description": "Description for shortCode."
+    }
+
+  ] }
