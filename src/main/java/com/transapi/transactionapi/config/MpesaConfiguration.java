@@ -20,6 +20,12 @@ public class MpesaConfiguration {
     private String confirmationURL;
     private String validationURL;
     private String responseType;
+    private String b2cTransactionEndpoint;
+    private String b2cResultUrl;
+    private String b2cQueueTimeoutUrl;
+    private String b2cInitiatorName;
+    private String b2cInitiatorPassword;
+
 
     @Override
     public String toString() {

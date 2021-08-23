@@ -6,8 +6,9 @@ import lombok.Data;
 @Data
 public class SimulateTransactionResponse {
 
-    @JsonProperty("ResponseCode")
-    private String responseCode;
+
+    @JsonProperty("ConversationID")
+    private String conversationID;
 
     @JsonProperty("ResponseDescription")
     private String responseDescription;
