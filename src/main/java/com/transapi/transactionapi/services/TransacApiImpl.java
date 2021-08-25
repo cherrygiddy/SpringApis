@@ -159,7 +159,45 @@ public class TransacApiImpl implements TransacApi {
             log.error(String.format("Could not perform B2C transaction ->%s", e.getLocalizedMessage()));
             return null;
         }
-
     }
-}
+        @Override
+        public TransactionStatusSyncResponse getTransactionResult(InternalTransactionStatusRequest internalTransactionStatusRequest) {
 
+            TransactionStatusRequest transactionStatusRequest = new TransactionStatusRequest();
+            transactionStatusRequest.setTransactionID(internalTransactionStatusRequest.getTransactionID());
+
+            transactionStatusRequest.setInitiator(mpesaConfiguration.getB2cInitiatorName());
+            transactionStatusRequest.setSecurityCredential(HelperUtility.getSecurityCredentials(mpesaConfiguration.getB2cInitiatorPassword()));
+            transactionStatusRequest.setCommandID(TRANSACTION_STATUS_QUERY_COMMAND);
+            transactionStatusRequest.setPartyA(mpesaConfiguration.getShortCode());
+            transactionStatusRequest.setIdentifierType(SHORT_CODE_IDENTIFIER);
+            transactionStatusRequest.setResultURL(mpesaConfiguration.getB2cResultUrl());
+            transactionStatusRequest.setQueueTimeOutURL(mpesaConfiguration.getB2cQueueTimeoutUrl());
+            transactionStatusRequest.setRemarks(TRANSACTION_STATUS_VALUE);
+            transactionStatusRequest.setOccasion(TRANSACTION_STATUS_VALUE);
+
+            AccessTokenResponse accessTokenResponse = getAccessToken();
+
+            RequestBody body = RequestBody.create(JSON_MEDIA_TYPE,
+                    Objects.requireNonNull(HelperUtility.toJson(transactionStatusRequest)));
+
+            Request request = new Request.Builder()
+                    .url(mpesaConfiguration.getTransactionResultUrl())
+                    .post(body)
+                    .addHeader(AUTHORIZATION_HEADER_STRING, String.format("%s %s", BEARER_AUTH_STRING, accessTokenResponse.getAccessToken()))
+                    .build();
+
+            try {
+                Response response = okHttpClient.newCall(request).execute();
+                assert response.body() != null;
+                // use Jackson to Decode the ResponseBody ...
+
+                return objectMapper.readValue(response.body().string(), TransactionStatusSyncResponse.class);
+            } catch (IOException e) {
+                log.error(String.format("Could not fetch transaction result -> %s", e.getLocalizedMessage()));
+                return null;
+            }
+
+
+        }
+    }

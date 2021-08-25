@@ -46,8 +46,7 @@ public class MpesaController {
         return ResponseEntity.ok(transacApi.simulateC2BTransaction(simulateTransactionRequest));
     }
 
-
-    @PostMapping(path = "/b2c-transaction-result", produces = "application/json")
+    @PostMapping(path = "/transaction-result", produces = "application/json")
     public ResponseEntity<AcknowledgeResponse> b2cTransactionAsyncResults(@RequestBody B2CTransactionAsyncResponse b2CTransactionAsyncResponse)
             throws JsonProcessingException {
         log.info("============ B2C Transaction Response =============");
@@ -64,4 +63,10 @@ public class MpesaController {
     public ResponseEntity<B2CTransactionSyncResponse> performB2CTransaction(@RequestBody InternalB2CTransactionRequest internalB2CTransactionRequest) {
         return ResponseEntity.ok(transacApi.performB2CTransaction(internalB2CTransactionRequest));
     }
+
+    @PostMapping(path = "/simulate-transaction-result", produces = "application/json")
+    public ResponseEntity<TransactionStatusSyncResponse> getTransactionStatusResult(@RequestBody InternalTransactionStatusRequest internalTransactionStatusRequest) {
+        return ResponseEntity.ok(transacApi.getTransactionResult(internalTransactionStatusRequest));
+    }
+
 }
