@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 
 @Data
-public class TransactionStatusRequest{
+public class CheckAccountBalanceRequest{
 
 	@JsonProperty("QueueTimeOutURL")
 	private String queueTimeOutURL;
@@ -14,9 +14,6 @@ public class TransactionStatusRequest{
 
 	@JsonProperty("Remarks")
 	private String remarks;
-
-	@JsonProperty("Occasion")
-	private String occasion;
 
 	@JsonProperty("SecurityCredential")
 	private String securityCredential;
@@ -29,9 +26,6 @@ public class TransactionStatusRequest{
 
 	@JsonProperty("IdentifierType")
 	private String identifierType;
-
-	@JsonProperty("TransactionID")
-	private String transactionID;
 
 	@JsonProperty("ResultURL")
 	private String resultURL;

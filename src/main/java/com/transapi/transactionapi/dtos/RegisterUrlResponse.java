@@ -6,12 +6,12 @@ import lombok.Data;
 @Data
 public class RegisterUrlResponse {
 
-	@JsonProperty("ConversationID")
-	private String conversationID;
+    @JsonProperty("ConversationID")
+    private String conversationID;
 
-	@JsonProperty("ResponseDescription")
-	private String responseDescription;
+    @JsonProperty("ResponseDescription")
+    private String responseDescription;
 
-	@JsonProperty("OriginatorCoversationID")
-	private String originatorCoversationID;
+    @JsonProperty("OriginatorCoversationID")
+    private String originatorCoversationID;
 }

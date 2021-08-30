@@ -6,16 +6,16 @@ import lombok.Data;
 @Data
 public class MpesaValidationResponse {
 
-	@JsonProperty("TransactionType")
-	private String transactionType;
+    @JsonProperty("TransactionType")
+    private String transactionType;
 
-	@JsonProperty("BillRefNumber")
-	private String billRefNumber;
+    @JsonProperty("BillRefNumber")
+    private String billRefNumber;
 
-	@JsonProperty("MSISDN")
-	private String mSISDN;
+    @JsonProperty("MSISDN")
+    private String mSISDN;
 
-	@JsonProperty("FirstName")
+    @JsonProperty("FirstName")
 	private String firstName;
 
 	@JsonProperty("MiddleName")

@@ -14,6 +14,7 @@ public class TransactionApiApplication {
     public static void main(String[] args) {
         SpringApplication.run(TransactionApiApplication.class, args);
     }
+
     @Bean
     public OkHttpClient getOkHttpClient() {
         return new OkHttpClient();
@@ -30,4 +31,5 @@ public class TransactionApiApplication {
         acknowledgeResponse.setMessage("Success");
         return acknowledgeResponse;
     }
+
 }

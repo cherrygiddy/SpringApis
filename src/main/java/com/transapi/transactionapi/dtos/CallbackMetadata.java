@@ -3,9 +3,11 @@ package com.transapi.transactionapi.dtos;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 
-@Data
-public class B2CTransactionAsyncResponse{
+import java.util.List;
 
-	@JsonProperty("Result")
-	private Result result;
+@Data
+public class CallbackMetadata{
+
+	@JsonProperty("Item")
+	private List<ItemItem> item;
 }

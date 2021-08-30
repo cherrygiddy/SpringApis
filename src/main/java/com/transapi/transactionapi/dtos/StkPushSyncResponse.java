@@ -4,17 +4,19 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 
 @Data
-public class B2CTransactionSyncResponse{
+public class StkPushSyncResponse{
 
-
-	@JsonProperty("ConversationID")
-	private String conversationID;
+	@JsonProperty("MerchantRequestID")
+	private String merchantRequestID;
 
 	@JsonProperty("ResponseCode")
 	private String responseCode;
 
-	@JsonProperty("OriginatorConversationID")
-	private String originatorConversationID;
+	@JsonProperty("CustomerMessage")
+	private String customerMessage;
+
+	@JsonProperty("CheckoutRequestID")
+	private String checkoutRequestID;
 
 	@JsonProperty("ResponseDescription")
 	private String responseDescription;

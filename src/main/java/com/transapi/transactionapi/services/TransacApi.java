@@ -6,7 +6,7 @@ import com.transapi.transactionapi.dtos.*;
 public interface TransacApi {
 
     /**
-     * @return Returns Daraja API Access Token Response
+     * @return Returns Transaction API Access Token Response
      */
     AccessTokenResponse getAccessToken();
 
@@ -14,7 +14,13 @@ public interface TransacApi {
 
     SimulateTransactionResponse simulateC2BTransaction(SimulateTransactionRequest simulateTransactionRequest);
 
-    B2CTransactionSyncResponse performB2CTransaction(InternalB2CTransactionRequest internalB2CTransactionRequest);
+    CommonSyncResponse performB2CTransaction(InternalB2CTransactionRequest internalB2CTransactionRequest);
+
     TransactionStatusSyncResponse getTransactionResult(InternalTransactionStatusRequest internalTransactionStatusRequest);
 
+    CommonSyncResponse checkAccountBalance();
+
+    StkPushSyncResponse performStkPushTransaction(InternalStkPushRequest internalStkPushRequest);
+
+    LNMQueryResponse getTransactionStatus(InternalLNMRequest internalLNMRequest);
 }

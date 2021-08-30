@@ -9,7 +9,6 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 @ConfigurationProperties(prefix = "mpesa.transact")
 public class MpesaConfiguration {
-
     private String consumerKey;
     private String consumerSecret;
     private String grantType;
@@ -26,13 +25,16 @@ public class MpesaConfiguration {
     private String b2cInitiatorName;
     private String b2cInitiatorPassword;
     private String transactionResultUrl;
-
+    private String checkAccountBalanceUrl;
+    private String stkPassKey;
+    private String stkPushShortCode;
+    private String stkPushRequestUrl;
+    private String stkPushRequestCallbackUrl;
+    private String lnmQueryRequestUrl;
 
     @Override
     public String toString() {
         return String.format("{consumerKey='%s', consumerSecret='%s', grantType='%s', oauthEndpoint='%s'}",
                 consumerKey, consumerSecret, grantType, oauthEndpoint);
     }
-
-
 }

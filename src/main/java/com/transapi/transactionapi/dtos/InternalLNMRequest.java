@@ -4,8 +4,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 
 @Data
-public class B2CTransactionAsyncResponse{
+public class InternalLNMRequest{
 
-	@JsonProperty("Result")
-	private Result result;
+	@JsonProperty("CheckoutRequestID")
+	private String checkoutRequestID;
 }

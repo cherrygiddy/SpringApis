@@ -4,18 +4,18 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 
 @Data
-public class Result{
+public class Result {
 
-	@JsonProperty("ConversationID")
-	private String conversationID;
+    @JsonProperty("ConversationID")
+    private String conversationID;
 
-	@JsonProperty("ReferenceData")
-	private com.transapi.transactionapi.dtos.ReferenceData referenceData;
+    @JsonProperty("ReferenceData")
+    private ReferenceData referenceData;
 
-	@JsonProperty("OriginatorConversationID")
-	private String originatorConversationID;
+    @JsonProperty("OriginatorConversationID")
+    private String originatorConversationID;
 
-	@JsonProperty("ResultDesc")
+    @JsonProperty("ResultDesc")
 	private String resultDesc;
 
 	@JsonProperty("ResultType")
@@ -24,8 +24,8 @@ public class Result{
 	@JsonProperty("ResultCode")
 	private int resultCode;
 
-	@JsonProperty("ResultParameters")
-	private com.transapi.transactionapi.dtos.ResultParameters resultParameters;
+    @JsonProperty("ResultParameters")
+    private ResultParameters resultParameters;
 
 	@JsonProperty("TransactionID")
 	private String transactionID;

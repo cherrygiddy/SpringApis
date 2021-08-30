@@ -6,15 +6,15 @@ import lombok.Data;
 @Data
 public class RegisterUrlRequest {
 
-	@JsonProperty("ShortCode")
-	private String shortCode;
+    @JsonProperty("ShortCode")
+    private String shortCode;
 
-	@JsonProperty("ConfirmationURL")
-	private String confirmationURL;
+    @JsonProperty("ConfirmationURL")
+    private String confirmationURL;
 
-	@JsonProperty("ValidationURL")
-	private String validationURL;
+    @JsonProperty("ValidationURL")
+    private String validationURL;
 
-	@JsonProperty("ResponseType")
+    @JsonProperty("ResponseType")
 	private String responseType;
 }

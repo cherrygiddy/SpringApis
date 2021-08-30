@@ -7,5 +7,5 @@ import lombok.Data;
 public class ReferenceData{
 
 	@JsonProperty("ReferenceItem")
-	private com.transapi.transactionapi.dtos.ReferenceItem referenceItem;
+    private ReferenceItem referenceItem;
 }
