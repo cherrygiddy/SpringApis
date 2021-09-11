@@ -9,7 +9,7 @@ services:
     networks:
       - daraja
     volumes:
-      - mongo:/data/db
+      - mongo:/home/gg/Desktop/data/db
 
 networks:
   daraja:

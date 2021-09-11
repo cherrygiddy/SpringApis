@@ -9,6 +9,9 @@ public class SimulateTransactionResponse {
     @JsonProperty("ConversationID")
     private String conversationID;
 
+    @JsonProperty("ResponseCode")
+    private String responseCode;
+
     @JsonProperty("ResponseDescription")
     private String responseDescription;
 
